@@ -11,3 +11,4 @@ matplotlib
 missingno
 streamlit
 pillow
+boto3

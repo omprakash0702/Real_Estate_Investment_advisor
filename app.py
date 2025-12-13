@@ -16,10 +16,36 @@ import json
 from io import BytesIO
 import matplotlib.pyplot as plt
 from typing import Dict
+import boto3
+
 
 st.set_page_config(page_title="RealEstate Investor", layout="wide", initial_sidebar_state="expanded")
 st.title("🏡 Real Estate Investment Advisor")
 st.markdown("Upload a CSV or enter a single property. The app will load saved models (if present) and predict.")
+
+
+# -------------------------
+# Download models from S3 if not present
+
+def download_models():
+    bucket = os.getenv("MODEL_BUCKET", "realestate-ml-models")
+    prefix = "models"
+    os.makedirs("models", exist_ok=True)
+
+    s3 = boto3.client("s3")
+    files = [
+        "final_best_classifier.joblib",
+        "final_regressor_RF.joblib",
+        "final_regressor_XGB.joblib",
+        "scales.json"
+    ]
+
+    for f in files:
+        local_path = os.path.join("models", f)
+        if not os.path.exists(local_path):
+            s3.download_file(bucket, f"{prefix}/{f}", local_path)
+
+download_models()
 
 # -------------------------
 # Paths (update if needed)
