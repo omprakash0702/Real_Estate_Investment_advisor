@@ -1,0 +1,13 @@
+pandas
+numpy
+scikit-learn
+xgboost
+mlflow
+joblib
+category_encoders
+plotly
+seaborn
+matplotlib
+missingno
+streamlit
+pillow
