@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Real Estate Investment Advisor</title>
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.65; }
-    h1, h2, h3 { color: #2c3e50; }
-    ul { margin-left: 20px; }
-    code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; }
-    .box { background: #f9f9f9; padding: 15px; border-left: 5px solid #3498db; }
-  </style>
-</head>
+
 
 <body>
 
